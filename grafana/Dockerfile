@@ -1,0 +1,16 @@
+FROM grafana/grafana:5.4.3
+
+USER root
+
+RUN apt-get update && apt-get install -y gettext-base && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /etc/grafana
+COPY datasources ./datasources
+COPY dashboards.yaml /etc/grafana/provisioning/dashboards
+COPY gatling-dashboard.json /etc/grafana/provisioning/dashboards
+
+WORKDIR /app
+COPY entrypoint.sh ./
+RUN chmod u+x entrypoint.sh
+
+ENTRYPOINT ["/app/entrypoint.sh"]
