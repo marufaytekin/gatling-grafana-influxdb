@@ -1,7 +1,14 @@
-# DockerGrafanaInfluxKit
-Some of us who have been working in performance testing for a long time might still remember the days when the only way to analyze your performance tests was to wait until test execution was over, test reports were created and distribution graphs were drawn. Fortunately, these days are far away from us. Now, we can run performance tests and get feedback instantly, and even choose among many available options how to monitor and analyze our performance testing scripts.
+# Gatling Real-time Monitoring
 
-Lightweight docker compose to spin up Grafana and Influx for metrics collection and analyses [just run compose and you are ready to go]
+Gatling can provide live metrics via the Graphite protocol which can be persisted and visualised.
+This project shows how to use InfluxDB, Graphite, and Grafana to monitor Gatling tests in real-time.
 
-Link to the related article: 
-https://www.blazemeter.com/blog/how-to-create-a-lightweight-performance-monitoring-solution-with-docker-grafana-and-influxdb
+Use `docker-compose up` to launch Grafana and Influx DB infrastructure. Go to [localhost:3000](http://localhost:3000) to see Grafana dashboard.
+
+Configure your Gatling instance to use graphite protocol to send data to InfluxDB. See the details [here.](https://gatling.io/docs/current/realtime_monitoring/?highlight=graphite)
+
+You can see a sample Grafana dashboard below.
+
+<p align="center">
+<img src="screenshots/grafana.png" width="500"/>
+</p>
