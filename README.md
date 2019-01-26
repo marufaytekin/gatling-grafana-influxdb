@@ -9,6 +9,6 @@ Configure your Gatling instance to use graphite protocol to send data to InfluxD
 
 You can see a sample Grafana dashboard below.
 
-<p align="center">
+<p align="left">
 <img src="screenshots/grafana.png" width="500"/>
 </p>
